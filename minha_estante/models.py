@@ -23,7 +23,6 @@ class Livro(models.Model):
     status = models.CharField(
         max_length=20, choices=STATUS_CHOICES, default='quero_ler'
     )
-    status = models.CharField
     imagem = models.ImageField(upload_to='livros/', blank=True, null=True)
     data_inicio = models.DateField()
     data_fim = models.DateField()

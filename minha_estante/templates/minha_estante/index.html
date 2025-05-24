@@ -13,15 +13,26 @@
     </header>
 
     <main>
-      <h2>Lidos ✅</h2>
+      <h2>Minha Estante</h2>
+      <a type="button" href="{% url 'cadastrar_livro' %}"
+        >Adicionar novo livro</a
+      >
       {% for livro in livros %}
 
       <ul>
         <li>
           <div>
-            <strong>{{livro.nome}}</strong> {{livro.autor.nome}}
-            <img src="{{livro.imagem.url }}" alt="{{produto.nome}}" />
-            {{livro.descricao}} {{livro.get_status_display}}
+            <h1>
+              <strong>{{livro.nome}}</strong>
+            </h1>
+            <p>Autor: {{livro.autor.nome}}</p>
+
+            <p>{{livro.descricao}}</p>
+            <p>{{livro.get_status_display}}</p>
+          </div>
+          <div>
+            <a type="button" href="#">Editar</a>
+            <a type="button" href="#">Remover</a>
           </div>
         </li>
       </ul>
