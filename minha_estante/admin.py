@@ -1,8 +1,8 @@
 from django.contrib import admin
-from .models import Autores, Categoria, Livro
+from .models import Autor, Categoria, Livro
 
-@admin.register(Autores)
-class AutoresAdmin(admin.ModelAdmin):
+@admin.register(Autor)
+class AutorAdmin(admin.ModelAdmin):
     list_display = ('nome',)
 
 @admin.register(Categoria)
