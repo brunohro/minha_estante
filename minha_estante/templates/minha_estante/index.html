@@ -31,8 +31,10 @@
             <p>{{livro.get_status_display}}</p>
           </div>
           <div>
-            <a type="button" href="#">Editar</a>
-            <a type="button" href="#">Remover</a>
+            <a type="button" href="{% url 'editar_livro' livro.id %}">Editar</a>
+            <a type="button" href="{% url 'deletar_livro' livro.id %}"
+              >Remover</a
+            >
           </div>
         </li>
       </ul>

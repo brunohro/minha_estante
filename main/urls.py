@@ -16,10 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from minha_estante.views import index, cadastrar_livro
+from minha_estante.views import index, cadastrar_livro, editar_livro, deletar_livro
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", index, name='index'),
     path("cadastrar_livro/", cadastrar_livro, name="cadastrar_livro"),
+    path("editar_livro/<int:id>", editar_livro, name="editar_livro"),
+    path("deletar_livro/<int:id>", deletar_livro, name="deletar_livro"),
 ]
