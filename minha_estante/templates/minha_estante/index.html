@@ -1,11 +1,111 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Minha estante</title>
+    <title>Minha Estante</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
+  <style>
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #4a90e2;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    main {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    .categoria {
+      background: #fff;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .categoria h2 {
+      color: #4a90e2;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      list-style-type: none;
+    }
+
+    ul li {
+      background: #e9f1fb;
+      padding: 10px;
+      margin-bottom: 8px;
+      border-radius: 6px;
+      transition: background 0.3s;
+    }
+
+    ul li:hover {
+      background: #d0e4f9;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #4a90e2;
+      color: #fff;
+      margin-top: 30px;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+  </style>
   <body>
-    Inicializando projeto
+    <header>
+      <h1>📚 Minha Estante</h1>
+    </header>
+
+    <main>
+      <section class="categoria">
+        <h2>Lidos ✅</h2>
+        <ul>
+          <li><strong>Dom Casmurro</strong> - Machado de Assis</li>
+          <li><strong>O Hobbit</strong> - J.R.R. Tolkien</li>
+        </ul>
+      </section>
+
+      <section class="categoria">
+        <h2>Lendo 📖</h2>
+        <ul>
+          <li><strong>1984</strong> - George Orwell</li>
+        </ul>
+      </section>
+
+      <section class="categoria">
+        <h2>Quero Ler 📌</h2>
+        <ul>
+          <li><strong>A Revolução dos Bichos</strong> - George Orwell</li>
+          <li><strong>A Arte da Guerra</strong> - Sun Tzu</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>Desenvolvido por Minha Estante © 2025</p>
+    </footer>
   </body>
 </html>
