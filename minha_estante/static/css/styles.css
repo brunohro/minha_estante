@@ -74,6 +74,37 @@ main {
 .add-livro:hover {
   background: #218838;
 }
+
+.input-class,
+.textarea-class,
+.select-class,
+.date-input-class,
+.file-input-class {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+textarea.textarea-class {
+  resize: vertical;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
 footer {
   background: #333;
   color: white;

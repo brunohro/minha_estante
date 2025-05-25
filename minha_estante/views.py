@@ -14,7 +14,7 @@ def cadastrar_livro(request):
             return redirect('index')
     else:
         form = LivroForm()
-    return render(request, "minha_estante/livros/cadastrar_livro.html", {'form': form})
+    return render(request, "minha_estante/livros/cadastrar_livro.html", {'form': form, 'editar': False})
 
 def editar_livro(request, id):
     livro = Livro.objects.get(id=id)
@@ -25,7 +25,7 @@ def editar_livro(request, id):
             return redirect('index')
     else:
         form = LivroForm(instance=livro)
-    return render(request, "minha_estante/livros/cadastrar_livro.html", {'form': form})
+    return render(request, "minha_estante/livros/cadastrar_livro.html", {'form': form, 'editar': True})
 
 def deletar_livro(request, id):
     livro = Livro.objects.get(id=id)
