@@ -10,6 +10,15 @@
   <body>
     <header>
       <h1>📚 Minha Estante</h1>
+      <div>
+        {% if user.is_authenticated %}
+        <p>Olá, {{ user.username }}!</p>
+        <p><a href="{% url 'logout' %}">Sair</a></p>
+        {% else %}
+        <a href="{% url 'cadastrar_usuario'%}">Cadastre-se</a> ou
+        <a href="{% url 'login'%}">Faça login</a>
+        {% endif %}
+      </div>
     </header>
   </body>
 </html>
