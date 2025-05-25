@@ -1,51 +1,24 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Minha Estante</title>
-    <link rel="stylesheet" href="{% static 'css/styles.css'%}" />
-  </head>
-  <body>
-    <header>
-      <h1>📚 Minha Estante</h1>
-    </header>
+{% extends "minha_estante/layout/base.html"%} {%block content%}
+<h2>Minha Estante</h2>
+<a class="add-livro" href="{% url 'cadastrar_livro' %}">Adicionar novo livro</a>
 
-    <main>
-      <h2>Minha Estante</h2>
-      <a type="button" href="{% url 'cadastrar_livro' %}"
-        >Adicionar novo livro</a
-      >
-      {% for livro in livros %}
-
-      <ul>
-        <li>
-          <div>
-            <h1>
-              <strong>{{livro.nome}}</strong>
-            </h1>
-            <p>Autor: {{livro.autor.nome}}</p>
-
-            <p>{{livro.descricao}}</p>
-            <p>{{livro.get_status_display}}</p>
-          </div>
-          <div>
-            <a type="button" href="{% url 'editar_livro' livro.id %}">Editar</a>
-            <a type="button" href="{% url 'deletar_livro' livro.id %}"
-              >Remover</a
-            >
-          </div>
-        </li>
-      </ul>
-
-      {% empty %}
-      <p>Não há livros aqui no momento</p>
-      {% endfor %}
-    </main>
-
-    <footer>
-      <p>Desenvolvido por Minha Estante © 2025</p>
-    </footer>
-  </body>
-</html>
+{% if livros %}
+<div class="estante">
+  {% for livro in livros %}
+  <div class="livro">
+    {% if livro.imagem %}
+    <img src="{{ livro.imagem.url }}" alt="{{ livro.nome }}" />
+    {% else %} sem img {% endif %}
+    <strong>{{ livro.nome }}</strong>
+    <p><small>Autor: {{ livro.autor.nome }}</small></p>
+    <p><small>Status: {{ livro.get_status_display }}</small></p>
+    <div class="botoes">
+      <a href="{% url 'editar_livro' livro.id %}">Editar</a>
+      <a href="{% url 'deletar_livro' livro.id %}">Remover</a>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% else %}
+<p>Não há livros aqui no momento.</p>
+{% endif %} {%endblock content%}
