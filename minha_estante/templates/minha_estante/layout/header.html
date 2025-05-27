@@ -9,7 +9,11 @@
   </head>
   <body>
     <header>
-      <h1>📚 Minha Estante</h1>
+      <div>
+        <h1>
+          <a href="{% url 'index'%}">📚 Minha Estante</a>
+        </h1>
+      </div>
       <div>
         {% if user.is_authenticated %}
         <p>Olá, {{ user.username }}!</p>
