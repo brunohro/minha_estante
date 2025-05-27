@@ -15,7 +15,16 @@
         </h1>
       </div>
       <div>
-        {% if user.is_authenticated %}
+        {% if user.is_authenticated %} {% if request.user.is_staff %}
+        <a href="{% url 'adm' %}">
+          <span class="lanca">Administrador</span>
+          <style>
+            .lanca:hover {
+              color: rgb(129, 128, 128);
+            }
+          </style>
+        </a>
+        {% endif %}
         <p>Olá, {{ user.username }}!</p>
         <p><a href="{% url 'logout' %}">Sair</a></p>
         {% else %}

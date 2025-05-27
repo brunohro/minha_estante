@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path
-from minha_estante.views import index, cadastrar_livro, editar_livro, deletar_livro, login_view, logout_view, cadastrar_usuario
+from minha_estante.views import index, cadastrar_livro, editar_livro, deletar_livro, login_view, logout_view, cadastrar_usuario, adm
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,6 +29,7 @@ urlpatterns = [
     path('login/', login_view, name='login'),
     path('logout/', logout_view, name='logout'),
     path('cadastrar_usuario/', cadastrar_usuario, name='cadastrar_usuario'),
+    path('adm/', adm, name="adm"),
 ]
 
 

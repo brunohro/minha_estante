@@ -1,0 +1,45 @@
+{% extends 'minha_estante/layout/base.html'%} {% block content %}
+<h1>Painel Administrativo</h1>
+
+<div>
+  <h2>Livros</h2>
+  {% for livro in livros %}
+  <ul>
+    <li>
+      <strong>Nome:</strong> {{livro.nome}} <br /><strong>Autor:</strong>
+      {{livro.autor}} <br />
+      <strong> Descrição: </strong>
+      {{livro.descricao}}
+    </li>
+    <div class="botoes">
+      <a href="{% url 'editar_livro' livro.id %}">Editar</a>
+      <a href="{% url 'deletar_livro' livro.id %}">Remover</a>
+    </div>
+  </ul>
+  {%endfor%}
+</div>
+<div>
+  <h2>Categorias</h2>
+  {% for categoria in categorias %}
+  <ul>
+    <li><strong>Nome: </strong>{{categoria.nome}}</li>
+    <div class="botoes">
+      <a href="#">Editar</a>
+      <a href="#">Remover</a>
+    </div>
+  </ul>
+  {% endfor %}
+</div>
+<div>
+  <h2>Autores</h2>
+  {% for autor in autores%}
+  <ul>
+    <li><strong>Nome: </strong>{{autor.nome}}</li>
+    <div class="botoes">
+      <a href="#">Editar</a>
+      <a href="#">Remover</a>
+    </div>
+  </ul>
+  {% endfor %}
+</div>
+{% endblock content %}

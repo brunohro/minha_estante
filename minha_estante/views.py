@@ -2,18 +2,8 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
-from .models import Livro
+from .models import Livro, Autor, Categoria
 from .forms import LivroForm
-
-def cadastrar_usuario(request):
-    if request.method == 'POST':
-        form = UserCreationForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect("index")
-    else:
-        form = UserCreationForm()
-    return render(request, "minha_estante/user/cadastrar_usuario.html", {'form': form})
 
 def login_view(request):
     if request.method == 'POST':
@@ -34,6 +24,16 @@ def logout_view(request):
 def index(request):
     livros = Livro.objects.all()
     return render(request, "minha_estante/index.html", {'livros': livros})
+
+def cadastrar_usuario(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("index")
+    else:
+        form = UserCreationForm()
+    return render(request, "minha_estante/user/cadastrar_usuario.html", {'form': form})
 
 @login_required
 def cadastrar_livro(request):
@@ -63,3 +63,10 @@ def deletar_livro(request, id):
     livro = Livro.objects.get(id=id)
     livro.delete()
     return redirect('index')
+
+@login_required
+def adm(request):
+    livros = Livro.objects.all()
+    autores = Autor.objects.all()
+    categorias = Categoria.objects.all()
+    return render(request, "minha_estante/administrativo/adm.html", {'livros': livros, 'autores': autores, 'categorias': categorias})
