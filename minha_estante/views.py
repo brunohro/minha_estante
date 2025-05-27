@@ -31,7 +31,6 @@ def logout_view(request):
     logout(request)
     return render(request, "minha_estante/index.html")
 
-@login_required
 def index(request):
     livros = Livro.objects.all()
     return render(request, "minha_estante/index.html", {'livros': livros})

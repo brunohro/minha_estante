@@ -112,3 +112,83 @@ footer {
   padding: 1rem;
   margin-top: 2rem;
 }
+
+.login-container {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  margin: 5rem auto; /* Centraliza horizontalmente com espaçamento no topo */
+  text-align: center;
+}
+
+.login-container h1 {
+  margin-bottom: 1.5rem;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.login-container button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.login-container button:hover {
+  background-color: #0056b3;
+}
+
+.error {
+  color: red;
+  margin-bottom: 1rem;
+}
+
+.cadastro-container {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  margin: 5rem auto; /* Centraliza com espaçamento no topo */
+  text-align: center;
+}
+
+.cadastro-container h2 {
+  margin-bottom: 1.5rem;
+}
+
+.cadastro-container input,
+.cadastro-container select,
+.cadastro-container textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.cadastro-container button {
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.cadastro-container button:hover {
+  background-color: #218838;
+}
